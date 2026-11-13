@@ -1,8 +1,10 @@
 # VLM-SinkQuant
 
+English | [中文](README.zh-CN.md)
+
 **Do visual tokens need special treatment when multimodal LLMs are quantized to 4 bits?**
 
-LLM quantizers routinely protect attention-sink tokens, for example by keeping the KV cache of the first token in full precision. Multimodal LLMs also develop *visual* sinks: a few image tokens that absorb a large share of the attention paid to the image. This repository asks whether those visual sinks deserve the same protection when the language model of an MLLM is quantized to 4 bits (per-token INT4, MXFP4, NVFP4) This repository contains the code and tests; the findings are summarized below.
+LLM quantizers routinely protect attention-sink tokens, for example by keeping the KV cache of the first token in full precision. Multimodal LLMs also develop *visual* sinks: a few image tokens that absorb a large share of the attention paid to the image. This repository asks whether those visual sinks deserve the same protection when the language model of an MLLM is quantized to 4 bits (per-token INT4, MXFP4, NVFP4). This repository contains the code and tests; the findings are summarized below.
 
 - Models: Qwen3-VL-8B-Thinking, Qwen3-VL-2B-Thinking (weak-sink control), InternVL3.5-8B
 - Benchmarks: V\*, POPE, MathVista (150-question stratified subset)
